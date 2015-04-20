@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4301C0A1AE302FE00F82DD9 /* BubblePopperBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */; };
+		D4301C0D1AE35E1D00F82DD9 /* goodCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */; };
+		D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79AC1ADE2A7D00BD2842 /* main.m */; };
+		D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */; };
+		D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46C79B11ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld */; };
+		D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79B51ADE2A7D00BD2842 /* ViewController.m */; };
+		D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46C79B71ADE2A7D00BD2842 /* Main.storyboard */; };
+		D46C79BB1ADE2A7D00BD2842 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */; };
+		D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C79BC1ADE2A7D00BD2842 /* LaunchScreen.xib */; };
+		D46C79CA1ADE2A7E00BD2842 /* bubblePopperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79C91ADE2A7E00BD2842 /* bubblePopperTests.m */; };
+		D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D46C79D31ADE2C4200BD2842 /* badCircle.png */; };
+		D46C79D61ADE2D3000BD2842 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */; };
+		D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */; };
+		D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D46C79C41ADE2A7E00BD2842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D46C799F1ADE2A7D00BD2842 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D46C79A61ADE2A7D00BD2842;
+			remoteInfo = bubblePopper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubblePopperBrain.m; sourceTree = "<group>"; };
+		D4301C0B1AE3034D00F82DD9 /* BubblePopperBrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubblePopperBrain.h; sourceTree = "<group>"; };
+		D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goodCircle.png; path = ../../bubblePopperImages/goodCircle.png; sourceTree = "<group>"; };
+		D46C79A71ADE2A7D00BD2842 /* bubblePopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bubblePopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46C79AB1ADE2A7D00BD2842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D46C79AC1ADE2A7D00BD2842 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D46C79AE1ADE2A7D00BD2842 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D46C79B21ADE2A7D00BD2842 /* bubblePopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bubblePopper.xcdatamodel; sourceTree = "<group>"; };
+		D46C79B41ADE2A7D00BD2842 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D46C79B51ADE2A7D00BD2842 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D46C79B81ADE2A7D00BD2842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D46C79BD1ADE2A7D00BD2842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D46C79C31ADE2A7E00BD2842 /* bubblePopperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bubblePopperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46C79C81ADE2A7E00BD2842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D46C79C91ADE2A7E00BD2842 /* bubblePopperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bubblePopperTests.m; sourceTree = "<group>"; };
+		D46C79D31ADE2C4200BD2842 /* badCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badCircle.png; path = ../../bubblePopperImages/badCircle.png; sourceTree = "<group>"; };
+		D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bubbleTimer.m; sourceTree = "<group>"; };
+		D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleTimer.h; sourceTree = "<group>"; };
+		D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTimer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D46C79A41ADE2A7D00BD2842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46C79D61ADE2D3000BD2842 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46C79C01ADE2A7E00BD2842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D46C799E1ADE2A7D00BD2842 = {
+			isa = PBXGroup;
+			children = (
+				D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */,
+				D46C79A91ADE2A7D00BD2842 /* bubblePopper */,
+				D46C79C61ADE2A7E00BD2842 /* bubblePopperTests */,
+				D46C79A81ADE2A7D00BD2842 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D46C79A81ADE2A7D00BD2842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D46C79A71ADE2A7D00BD2842 /* bubblePopper.app */,
+				D46C79C31ADE2A7E00BD2842 /* bubblePopperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D46C79A91ADE2A7D00BD2842 /* bubblePopper */ = {
+			isa = PBXGroup;
+			children = (
+				D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */,
+				D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */,
+				D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */,
+				D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */,
+				D4301C0B1AE3034D00F82DD9 /* BubblePopperBrain.h */,
+				D46C79AE1ADE2A7D00BD2842 /* AppDelegate.h */,
+				D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */,
+				D46C79B41ADE2A7D00BD2842 /* ViewController.h */,
+				D46C79B51ADE2A7D00BD2842 /* ViewController.m */,
+				D46C79B71ADE2A7D00BD2842 /* Main.storyboard */,
+				D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */,
+				D46C79BC1ADE2A7D00BD2842 /* LaunchScreen.xib */,
+				D46C79B11ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld */,
+				D46C79AA1ADE2A7D00BD2842 /* Supporting Files */,
+			);
+			path = bubblePopper;
+			sourceTree = "<group>";
+		};
+		D46C79AA1ADE2A7D00BD2842 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */,
+				D46C79D31ADE2C4200BD2842 /* badCircle.png */,
+				D46C79AB1ADE2A7D00BD2842 /* Info.plist */,
+				D46C79AC1ADE2A7D00BD2842 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D46C79C61ADE2A7E00BD2842 /* bubblePopperTests */ = {
+			isa = PBXGroup;
+			children = (
+				D46C79C91ADE2A7E00BD2842 /* bubblePopperTests.m */,
+				D46C79C71ADE2A7E00BD2842 /* Supporting Files */,
+			);
+			path = bubblePopperTests;
+			sourceTree = "<group>";
+		};
+		D46C79C71ADE2A7E00BD2842 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D46C79C81ADE2A7E00BD2842 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D46C79A61ADE2A7D00BD2842 /* bubblePopper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46C79CD1ADE2A7E00BD2842 /* Build configuration list for PBXNativeTarget "bubblePopper" */;
+			buildPhases = (
+				D46C79A31ADE2A7D00BD2842 /* Sources */,
+				D46C79A41ADE2A7D00BD2842 /* Frameworks */,
+				D46C79A51ADE2A7D00BD2842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bubblePopper;
+			productName = bubblePopper;
+			productReference = D46C79A71ADE2A7D00BD2842 /* bubblePopper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D46C79C21ADE2A7E00BD2842 /* bubblePopperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46C79D01ADE2A7E00BD2842 /* Build configuration list for PBXNativeTarget "bubblePopperTests" */;
+			buildPhases = (
+				D46C79BF1ADE2A7E00BD2842 /* Sources */,
+				D46C79C01ADE2A7E00BD2842 /* Frameworks */,
+				D46C79C11ADE2A7E00BD2842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D46C79C51ADE2A7E00BD2842 /* PBXTargetDependency */,
+			);
+			name = bubblePopperTests;
+			productName = bubblePopperTests;
+			productReference = D46C79C31ADE2A7E00BD2842 /* bubblePopperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D46C799F1ADE2A7D00BD2842 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Joey Verbeke";
+				TargetAttributes = {
+					D46C79A61ADE2A7D00BD2842 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D46C79C21ADE2A7E00BD2842 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D46C79A61ADE2A7D00BD2842;
+					};
+				};
+			};
+			buildConfigurationList = D46C79A21ADE2A7D00BD2842 /* Build configuration list for PBXProject "bubblePopper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D46C799E1ADE2A7D00BD2842;
+			productRefGroup = D46C79A81ADE2A7D00BD2842 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D46C79A61ADE2A7D00BD2842 /* bubblePopper */,
+				D46C79C21ADE2A7E00BD2842 /* bubblePopperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D46C79A51ADE2A7D00BD2842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */,
+				D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */,
+				D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */,
+				D46C79BB1ADE2A7D00BD2842 /* Images.xcassets in Resources */,
+				D4301C0D1AE35E1D00F82DD9 /* goodCircle.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46C79C11ADE2A7E00BD2842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D46C79A31ADE2A7D00BD2842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */,
+				D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */,
+				D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */,
+				D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */,
+				D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */,
+				D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */,
+				D4301C0A1AE302FE00F82DD9 /* BubblePopperBrain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D46C79BF1ADE2A7E00BD2842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46C79CA1ADE2A7E00BD2842 /* bubblePopperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D46C79C51ADE2A7E00BD2842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D46C79A61ADE2A7D00BD2842 /* bubblePopper */;
+			targetProxy = D46C79C41ADE2A7E00BD2842 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D46C79B71ADE2A7D00BD2842 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D46C79B81ADE2A7D00BD2842 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D46C79BC1ADE2A7D00BD2842 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D46C79BD1ADE2A7D00BD2842 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D46C79CB1ADE2A7E00BD2842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D46C79CC1ADE2A7E00BD2842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D46C79CE1ADE2A7E00BD2842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = bubblePopper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D46C79CF1ADE2A7E00BD2842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = bubblePopper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D46C79D11ADE2A7E00BD2842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = bubblePopperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bubblePopper.app/bubblePopper";
+			};
+			name = Debug;
+		};
+		D46C79D21ADE2A7E00BD2842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = bubblePopperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bubblePopper.app/bubblePopper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D46C79A21ADE2A7D00BD2842 /* Build configuration list for PBXProject "bubblePopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46C79CB1ADE2A7E00BD2842 /* Debug */,
+				D46C79CC1ADE2A7E00BD2842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D46C79CD1ADE2A7E00BD2842 /* Build configuration list for PBXNativeTarget "bubblePopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46C79CE1ADE2A7E00BD2842 /* Debug */,
+				D46C79CF1ADE2A7E00BD2842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D46C79D01ADE2A7E00BD2842 /* Build configuration list for PBXNativeTarget "bubblePopperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46C79D11ADE2A7E00BD2842 /* Debug */,
+				D46C79D21ADE2A7E00BD2842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D46C79B11ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D46C79B21ADE2A7D00BD2842 /* bubblePopper.xcdatamodel */,
+			);
+			currentVersion = D46C79B21ADE2A7D00BD2842 /* bubblePopper.xcdatamodel */;
+			path = bubblePopper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D46C799F1ADE2A7D00BD2842 /* Project object */;
+}
