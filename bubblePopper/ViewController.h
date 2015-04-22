@@ -15,13 +15,18 @@
     NSTimer *restartBadDisplayTimer;
     NSTimer *goodDisplayTimer;
     NSTimer *restartGoodDisplayTimer;
+    NSMutableArray *badBubbles;
+    NSMutableArray *goodBubbles;
 }
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *badBubble;
+@property (weak, nonatomic) IBOutlet UIImageView *badBubble2;
 @property (weak, nonatomic) IBOutlet UIImageView *goodBubble;
 @property (weak, nonatomic) IBOutlet UILabel *timeLeft;
 @property (weak, nonatomic) IBOutlet UILabel *score;
 
+@property (weak, nonatomic) IBOutlet UIButton *bad;
 
 -(void)decrementTimeLeft;
 -(void)startTimeLeftTimer;

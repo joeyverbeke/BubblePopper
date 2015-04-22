@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Joey Verbeke. All rights reserved.
 //
 
+/*
+
 #ifndef bubblePopper_BubbleTimer_h
 #define bubblePopper_BubbleTimer_h
 
@@ -17,7 +19,8 @@
 }
 
 -(void)startDisplayTimer:(NSTimeInterval)time;
--(void)startBeingDisplayedTimer:(NSTimeInterval)time;
+-(void)startBeingDisplayedTimer:(NSTimeInterval)time
+                               :(BOOL)beingDisplayed;
 
 
 @end
@@ -25,3 +28,5 @@
 
 
 #endif
+
+*/

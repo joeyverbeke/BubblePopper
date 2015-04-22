@@ -30,13 +30,26 @@ int goodPositionRand_Y = 50;
 BOOL showGoodBubble = NO;
 BOOL goodBubbleBeingDisplayed = NO;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (IBAction)goodPressed:(UIButton *)sender{
+- (void)badBubbleTimer:(int)bubbleNumber{
+    [self handleBadBubbleDisplay:bubbleNumber];
     
+}
+
+- (void)handleBadBubbleDisplay:(int)bubbleNumber{
+
+    badRand = arc4random_uniform(5);
+    
+    UIButton *bubble = badBubbles[bubbleNumber];
+    
+    if(badRand == 2 && bubble.hidden){
+        
+    }
 }
 
 - (void)shouldBadBubbleBeDisplayed{
@@ -55,7 +68,7 @@ BOOL goodBubbleBeingDisplayed = NO;
             [badDisplayTimer invalidate];
             badDisplayTimer = nil;
         }
-
+        
         restartBadDisplayTimer = [NSTimer scheduledTimerWithTimeInterval:1.8
                                                                   target:self
                                                                 selector:@selector(startBadDisplayTimer)
@@ -194,6 +207,7 @@ BOOL goodBubbleBeingDisplayed = NO;
 
 - (void)handleBadSingleTap:(UITapGestureRecognizer *)sender{
     NSLog(@"Bad");
+    
     [sender view].hidden = true;
     [self changeScore:NO];
     [self badTimer];
@@ -207,6 +221,58 @@ BOOL goodBubbleBeingDisplayed = NO;
     [self goodTimer];
 }
 
+- (IBAction)badPressed:(UIButton *)sender {
+    NSLog(@"bad");
+    NSLog(@"%li", (long)sender.tag);
+    sender.hidden = YES;
+    [self changeScore:NO];
+}
+
+- (IBAction)goodPressed:(UIButton *)sender {
+    NSLog(@"good");
+    NSLog(@"%li", (long)sender.tag);
+    sender.hidden = YES;
+    [self changeScore:YES];
+}
+
+- (void)timer:(int)buttonNumber{
+    
+}
+
+- (void)createBadBubbles{
+
+    for(int i=0; i<5; i++){
+        UIButton *bad = [UIButton buttonWithType:UIButtonTypeCustom];
+        bad.center = CGPointMake(screenWidth / 2 + i*10, screenHeight / 2);
+        [bad setBackgroundImage:[UIImage imageNamed:@"badCircle.png"] forState:UIControlStateNormal];
+        [bad sizeToFit];
+        [bad addTarget:self action:@selector(badPressed:) forControlEvents:UIControlEventTouchUpInside];
+        bad.adjustsImageWhenHighlighted = NO;
+        bad.tag = i;
+    
+        [self.view addSubview:bad];
+        
+        [badBubbles addObject:bad];
+    }
+}
+
+- (void)createGoodBubbles{
+    
+    for(int i=0; i<5; i++){
+        UIButton *good = [UIButton buttonWithType:UIButtonTypeCustom];
+        good.center = CGPointMake(screenWidth / 2 + i*10, screenHeight / 2 + 200);
+        [good setBackgroundImage:[UIImage imageNamed:@"goodCircle.png"] forState:UIControlStateNormal];
+        [good sizeToFit];
+        [good addTarget:self action:@selector(goodPressed:) forControlEvents:UIControlEventTouchUpInside];
+        good.adjustsImageWhenHighlighted = NO;
+        good.tag = i;
+        
+        [self.view addSubview:good];
+        
+        [goodBubbles addObject:good];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
@@ -214,6 +280,10 @@ BOOL goodBubbleBeingDisplayed = NO;
     _badBubble.userInteractionEnabled = YES;
     [_badBubble addGestureRecognizer:singleTapBad];
 
+    UITapGestureRecognizer *singleTapBad2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBadSingleTap:)];
+    _badBubble2.userInteractionEnabled = YES;
+    [_badBubble2 addGestureRecognizer:singleTapBad2];
+    
     UITapGestureRecognizer *singleTapGood = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGoodSingleTap:)];
     _goodBubble.userInteractionEnabled = YES;
     [_goodBubble addGestureRecognizer:singleTapGood];
@@ -221,6 +291,17 @@ BOOL goodBubbleBeingDisplayed = NO;
     screenWidth = [[UIScreen mainScreen] bounds].size.width;
     screenHeight = [[UIScreen mainScreen] bounds].size.height;
     
+    badBubbles = [[NSMutableArray alloc] init];
+    goodBubbles = [[NSMutableArray alloc] init];
+    
+    [self createBadBubbles];
+    [self createGoodBubbles];
+    
+/*
+    //bad bubbles
+    NSMutableArray * badBubbles = [NSArray arrayWithObjects:_badBubble, _badBubble2, nil];
+*/
+ 
     [self startTimeLeftTimer];
     [self startBadDisplayTimer];
     [self startGoodDisplayTimer];
