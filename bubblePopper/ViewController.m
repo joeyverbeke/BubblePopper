@@ -36,50 +36,6 @@ BOOL goodBubbleBeingDisplayed = NO;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)badBubbleTimer:(int)bubbleNumber{
-    [self handleBadBubbleDisplay:bubbleNumber];
-    
-}
-
-- (void)handleBadBubbleDisplay:(int)bubbleNumber{
-
-    badRand = arc4random_uniform(5);
-    
-    UIButton *bubble = badBubbles[bubbleNumber];
-    
-    if(badRand == 2 && bubble.hidden){
-        
-        int xPos;
-        int yPos;
-        BOOL overlapping = NO;
-        
-        do{
-            xPos = arc4random_uniform(screenWidth - 100);
-            yPos = arc4random_uniform(screenHeight - 100);
-            overlapping = NO;
-            
-            bubble.center = CGPointMake(xPos, yPos);
-        
-            for(id otherBubble in badBubbles){
-                UIButton *temp = otherBubble;
-            
-                if(CGRectIntersectsRect(bubble.frame, temp.frame))
-                    overlapping = YES;
-            }
-        }while(overlapping);
-        
-        bubble.hidden = NO;
-        
-        //badTimers
-        //need to create an array of timers
-        //use tags or position in bubble array to index
-        //create timer at same index within bubbleTimer array
-    }
-    else{
-        bubble.hidden = YES;
-    }
-}
-
 - (void)shouldBadBubbleBeDisplayed{
 
     badRand = arc4random_uniform(5);
@@ -267,6 +223,160 @@ BOOL goodBubbleBeingDisplayed = NO;
     
 }
 
+- (void)badBubbleTimer:(NSTimer*)sender{
+    NSInteger bubbleNumber = [sender.userInfo integerValue];
+    
+    [self handleBadBubbleDisplay:bubbleNumber];
+    
+}
+
+
+- (void)goodBubbleTimer:(NSTimer*)sender{
+    NSInteger bubbleNumber = [sender.userInfo integerValue];
+    
+    [self handleGoodBubbleDisplay:bubbleNumber];
+    
+}
+
+ 
+- (void)handleBadBubbleDisplay:(NSInteger)bubbleNumber{
+    
+    badRand = arc4random_uniform(5);
+    
+    UIButton *bubble = badBubbles[bubbleNumber];
+    
+    if(badRand == 2 && bubble.hidden){
+        
+        int xPos;
+        int yPos;
+        BOOL overlapping = NO;
+        
+        do{
+            xPos = arc4random_uniform(screenWidth - 100);
+            yPos = arc4random_uniform(screenHeight - 100);
+            overlapping = NO;
+            
+            bubble.center = CGPointMake(xPos, yPos);
+            
+            for(id otherBubble in badBubbles){
+                UIButton *temp = otherBubble;
+                
+                if(temp != bubble){
+                    if(CGRectIntersectsRect(bubble.frame, temp.frame))
+                        overlapping = YES;
+                }
+            }
+            for(id otherBubble in goodBubbles){
+                UIButton *temp = otherBubble;
+                
+                if(CGRectIntersectsRect(bubble.frame, temp.frame))
+                    overlapping = YES;
+            }
+        }while(overlapping);
+        
+        bubble.hidden = NO;
+        
+        //badTimers
+        //need to create an array of timers
+        //use tags or position in bubble array to index
+        //create timer at same index within bubbleTimer array
+
+        NSTimer *tempTimer = badBubbleTimers[bubbleNumber];
+        
+        if(tempTimer != nil){
+            [tempTimer invalidate];
+            tempTimer = nil;
+        }
+
+        /*
+        if (badBubbleTimers[bubbleNumber] != nil){
+            [badBubbleTimers[bubbleNumber] invalidate];
+            badBubbleTimers[bubbleNumber] = nil;
+        }
+         */
+       
+
+        badBubbleTimerRestart[bubbleNumber] = [NSTimer scheduledTimerWithTimeInterval:1.8
+                                                                  target:self
+                                                                selector:@selector(startBadDisplayTimer)
+                                                                userInfo:@(bubbleNumber)
+                                                                 repeats:NO];
+
+    }
+    else{
+        bubble.hidden = YES;
+    }
+}
+
+- (void)handleGoodBubbleDisplay:(NSInteger)bubbleNumber{
+    
+    goodRand = arc4random_uniform(5);
+    
+    UIButton *bubble = goodBubbles[bubbleNumber];
+    
+    if(goodRand == 2 && bubble.hidden){
+        
+        int xPos;
+        int yPos;
+        BOOL overlapping = NO;
+        
+        do{
+            xPos = arc4random_uniform(screenWidth - 100);
+            yPos = arc4random_uniform(screenHeight - 100);
+            overlapping = NO;
+            
+            bubble.center = CGPointMake(xPos, yPos);
+            
+            for(id otherBubble in goodBubbles){
+                UIButton *temp = otherBubble;
+                
+                if(temp != bubble){
+                    if(CGRectIntersectsRect(bubble.frame, temp.frame))
+                        overlapping = YES;
+                }
+            }
+            for(id otherBubble in badBubbles){
+                UIButton *temp = otherBubble;
+                
+                if(CGRectIntersectsRect(bubble.frame, temp.frame))
+                    overlapping = YES;
+            }
+        }while(overlapping);
+        
+        bubble.hidden = NO;
+        
+        //badTimers
+        //need to create an array of timers
+        //use tags or position in bubble array to index
+        //create timer at same index within bubbleTimer array
+        
+        NSTimer *tempTimer = goodBubbleTimers[bubbleNumber];
+        
+        if(tempTimer != nil){
+            [tempTimer invalidate];
+            tempTimer = nil;
+        }
+        
+        /*
+        if (goodBubbleTimers[bubbleNumber] != nil){
+            [goodBubbleTimers[bubbleNumber] invalidate];
+            goodBubbleTimers[bubbleNumber] = nil;
+        }
+         */
+        
+/*
+        goodBubbleTimerRestart[bubbleNumber] = [NSTimer scheduledTimerWithTimeInterval:1.8
+                                                                               target:self
+                                                                             selector:@selector(startGoodDisplayTimer)
+                                                                             userInfo:@(bubbleNumber)
+                                                                              repeats:NO];
+ */
+    }
+    else{
+        bubble.hidden = YES;
+    }
+}
+
 - (void)createBadBubbles{
 
     for(int i=0; i<5; i++){
@@ -281,6 +391,8 @@ BOOL goodBubbleBeingDisplayed = NO;
         [self.view addSubview:bad];
         
         [badBubbles addObject:bad];
+        
+//        [self startBadTimer:i];
     }
 }
 
@@ -298,7 +410,72 @@ BOOL goodBubbleBeingDisplayed = NO;
         [self.view addSubview:good];
         
         [goodBubbles addObject:good];
+        
+//        [self startGoodTimer:i];
     }
+}
+
+- (void)createTimers{
+    for(int i=0; i<5; i++){
+        NSTimer *tempTimerBad = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                        target:self
+                                                      selector:@selector(badBubbleTimer:)
+                                                      userInfo:@(i)
+                                                       repeats:YES];
+
+        [badBubbleTimers addObject:tempTimerBad];
+        
+        NSTimer *tempTimerGood = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                              target:self
+                                                            selector:@selector(goodBubbleTimer:)
+                                                            userInfo:@(i)
+                                                             repeats:YES];
+        
+        [goodBubbleTimers addObject:tempTimerGood];
+        
+        NSTimer *badTimerRestart = [NSTimer scheduledTimerWithTimeInterval:1.8
+                                                                   target:self
+                                                                 selector:@selector(startBadTimer:)
+                                                                 userInfo:@(i)
+                                                                  repeats:NO];
+        [badBubbleTimerRestart addObject:badTimerRestart];
+        
+        NSTimer *goodTimerRestart = [NSTimer scheduledTimerWithTimeInterval:1.8
+                                                                    target:self
+                                                                  selector:@selector(startGoodTimer:)
+                                                                  userInfo:@(i)
+                                                                   repeats:NO];
+        [goodBubbleTimerRestart addObject:goodTimerRestart];
+
+    }
+}
+
+- (void)startBadTimer:(NSTimer *)sender{
+    NSInteger bubbleNumber = [sender.userInfo integerValue];
+    
+    badBubbleTimers[bubbleNumber] = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                                     target:self
+                                                                   selector:@selector(badBubbleTimer:)
+                                                                   userInfo:@(bubbleNumber)
+                                                                    repeats:YES];
+}
+
+- (void)startGoodTimer:(NSTimer *)sender{
+    NSInteger bubbleNumber = [sender.userInfo integerValue];
+    
+    goodBubbleTimers[bubbleNumber] = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                                     target:self
+                                                                   selector:@selector(goodBubbleTimer:)
+                                                                   userInfo:@(bubbleNumber)
+                                                                    repeats:YES];
+}
+
+- (void)restartBadTimer:(int)bubbleNumber{
+    
+}
+
+- (void)restartGoodTimer:(int)bubbleNumber{
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -325,8 +502,14 @@ BOOL goodBubbleBeingDisplayed = NO;
     badBubbleTimers = [[NSMutableArray alloc] init];
     goodBubbleTimers = [[NSMutableArray alloc] init];
     
+    badBubbleTimerRestart = [[NSMutableArray alloc] init];
+    goodBubbleTimerRestart = [[NSMutableArray alloc] init];
+    
     [self createBadBubbles];
     [self createGoodBubbles];
+    [self createTimers];
+    
+    
     
 /*
     //bad bubbles
