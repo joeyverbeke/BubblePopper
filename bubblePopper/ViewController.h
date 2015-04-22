@@ -17,6 +17,8 @@
     NSTimer *restartGoodDisplayTimer;
     NSMutableArray *badBubbles;
     NSMutableArray *goodBubbles;
+    NSMutableArray *badBubbleTimers;
+    NSMutableArray *goodBubbleTimers;
 }
 
 

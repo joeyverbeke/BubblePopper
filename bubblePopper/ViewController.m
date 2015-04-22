@@ -49,6 +49,34 @@ BOOL goodBubbleBeingDisplayed = NO;
     
     if(badRand == 2 && bubble.hidden){
         
+        int xPos;
+        int yPos;
+        BOOL overlapping = NO;
+        
+        do{
+            xPos = arc4random_uniform(screenWidth - 100);
+            yPos = arc4random_uniform(screenHeight - 100);
+            overlapping = NO;
+            
+            bubble.center = CGPointMake(xPos, yPos);
+        
+            for(id otherBubble in badBubbles){
+                UIButton *temp = otherBubble;
+            
+                if(CGRectIntersectsRect(bubble.frame, temp.frame))
+                    overlapping = YES;
+            }
+        }while(overlapping);
+        
+        bubble.hidden = NO;
+        
+        //badTimers
+        //need to create an array of timers
+        //use tags or position in bubble array to index
+        //create timer at same index within bubbleTimer array
+    }
+    else{
+        bubble.hidden = YES;
     }
 }
 
@@ -293,6 +321,9 @@ BOOL goodBubbleBeingDisplayed = NO;
     
     badBubbles = [[NSMutableArray alloc] init];
     goodBubbles = [[NSMutableArray alloc] init];
+    
+    badBubbleTimers = [[NSMutableArray alloc] init];
+    goodBubbleTimers = [[NSMutableArray alloc] init];
     
     [self createBadBubbles];
     [self createGoodBubbles];
