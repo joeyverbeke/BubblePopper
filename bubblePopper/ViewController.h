@@ -35,6 +35,7 @@
 -(void)decrementTimeLeft;
 -(void)startTimeLeftTimer;
 
+/*
 -(void)badTimer;
 -(void)shouldBadBubbleBeDisplayed;
 -(void)startBadDisplayTimer;
@@ -44,7 +45,8 @@
 -(void)shouldGoodBubbleBeDisplayed;
 -(void)startGoodDisplayTimer;
 -(void)changeGoodBubblePosition;
-
+*/
+ 
 -(void)changeScore:(BOOL)increment;
 
 @end

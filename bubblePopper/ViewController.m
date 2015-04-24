@@ -30,12 +30,12 @@ int goodPositionRand_Y = 50;
 BOOL showGoodBubble = NO;
 BOOL goodBubbleBeingDisplayed = NO;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+/*
 - (void)shouldBadBubbleBeDisplayed{
 
     badRand = arc4random_uniform(5);
@@ -136,6 +136,23 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                       repeats:YES];
 }
 
+ 
+ - (void)handleBadSingleTap:(UITapGestureRecognizer *)sender{
+ NSLog(@"Bad");
+ 
+ [sender view].hidden = true;
+ [self changeScore:NO];
+ [self badTimer];
+ }
+ 
+ - (void)handleGoodSingleTap:(UITapGestureRecognizer *)sender{
+ NSLog(@"Good");
+ [sender view].hidden = true;
+ [self changeScore:YES];
+ [self goodTimer];
+ }
+
+
 -(void)changeBadBubblePosition{
 
     //need to make sure it doesn't go off screen
@@ -157,7 +174,8 @@ BOOL goodBubbleBeingDisplayed = NO;
     
     [_goodBubble setFrame:CGRectMake(goodPositionRand_X, goodPositionRand_Y, _goodBubble.frame.size.width, _goodBubble.frame.size.height)];
 }
-
+*/
+ 
 -(void)startTimeLeftTimer{
     timerTimeLeft = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                        target:self
@@ -166,6 +184,7 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                       repeats:YES];
 }
 
+
 -(void)decrementTimeLeft{
     NSString *textFromTimerLabel = self.timeLeft.text;
     NSInteger intFromTimerLabel = [textFromTimerLabel integerValue];
@@ -173,6 +192,64 @@ BOOL goodBubbleBeingDisplayed = NO;
     intFromTimerLabel--;
     
     self.timeLeft.text = [NSString stringWithFormat:@"%ld", (long)intFromTimerLabel];
+    
+    if(intFromTimerLabel == 0)
+        [self gameOver];
+    else{
+        for(int i=0; i<5; i++){
+ 
+            #define ARC4RANDOM_MAX      0x100000000
+            
+            double time;
+            
+            UIButton *badBubble = badBubbles[i];
+            
+            if(badBubble.hidden == YES){
+                time = ((double)arc4random() / ARC4RANDOM_MAX) * 3.0f + 0.5;
+            
+                NSTimer *tempTimerBad = [NSTimer scheduledTimerWithTimeInterval:time
+                                                                         target:self
+                                                                       selector:@selector(badBubbleTimer:)
+                                                                       userInfo:@(i)
+                                                                        repeats:NO];
+            
+                [badBubbleTimers addObject:tempTimerBad];
+            }
+            
+            UIButton *goodBubble = badBubbles[i];
+            
+            if(goodBubble.hidden == YES){
+                time = ((double)arc4random() / ARC4RANDOM_MAX) * 3.0f + 0.5;
+            
+                NSTimer *tempTimerGood = [NSTimer scheduledTimerWithTimeInterval:time
+                                                                          target:self
+                                                                        selector:@selector(goodBubbleTimer:)
+                                                                        userInfo:@(i)
+                                                                         repeats:NO];
+            
+                [goodBubbleTimers addObject:tempTimerGood];
+            }
+        }
+        
+        
+    }
+}
+
+-(void)gameOver{
+    for(int i=0; i<5; i++){
+        NSTimer *badTemp = badBubbleTimers[i];
+        [badTemp invalidate];
+        badTemp  = nil;
+        
+        NSTimer *goodTemp = goodBubbleTimers[i];
+        [goodTemp invalidate];
+        goodTemp  = nil;
+    }
+    
+    [timerTimeLeft invalidate];
+    timerTimeLeft = nil;
+    
+    [self showAlert];
 }
 
 -(void)changeScore:(BOOL)increment{
@@ -186,23 +263,6 @@ BOOL goodBubbleBeingDisplayed = NO;
         scoreInt -= 20;
         
     self.score.text = [NSString stringWithFormat:@"%ld", (long)scoreInt];
-}
-
-
-- (void)handleBadSingleTap:(UITapGestureRecognizer *)sender{
-    NSLog(@"Bad");
-    
-    [sender view].hidden = true;
-    [self changeScore:NO];
-    [self badTimer];
-    
-}
-
-- (void)handleGoodSingleTap:(UITapGestureRecognizer *)sender{
-    NSLog(@"Good");
-    [sender view].hidden = true;
-    [self changeScore:YES];
-    [self goodTimer];
 }
 
 - (IBAction)badPressed:(UIButton *)sender {
@@ -223,11 +283,11 @@ BOOL goodBubbleBeingDisplayed = NO;
     
 }
 
+
 - (void)badBubbleTimer:(NSTimer*)sender{
     NSInteger bubbleNumber = [sender.userInfo integerValue];
     
     [self handleBadBubbleDisplay:bubbleNumber];
-    
 }
 
 
@@ -237,6 +297,7 @@ BOOL goodBubbleBeingDisplayed = NO;
     [self handleGoodBubbleDisplay:bubbleNumber];
     
 }
+
 
  
 - (void)handleBadBubbleDisplay:(NSInteger)bubbleNumber{
@@ -252,10 +313,17 @@ BOOL goodBubbleBeingDisplayed = NO;
         BOOL overlapping = NO;
         
         do{
-            xPos = arc4random_uniform(screenWidth - 100);
-            yPos = arc4random_uniform(screenHeight - 100);
             overlapping = NO;
             
+            do{
+                xPos = arc4random_uniform(screenWidth - 75);
+            }while(xPos < 75);
+            
+            do{
+                yPos = arc4random_uniform(screenHeight - 75);
+            }while(yPos < 100);
+            
+             
             bubble.center = CGPointMake(xPos, yPos);
             
             for(id otherBubble in badBubbles){
@@ -281,12 +349,14 @@ BOOL goodBubbleBeingDisplayed = NO;
         //use tags or position in bubble array to index
         //create timer at same index within bubbleTimer array
 
+/*
         NSTimer *tempTimer = badBubbleTimers[bubbleNumber];
         
         if(tempTimer != nil){
             [tempTimer invalidate];
             tempTimer = nil;
         }
+ */
 
         /*
         if (badBubbleTimers[bubbleNumber] != nil){
@@ -295,12 +365,13 @@ BOOL goodBubbleBeingDisplayed = NO;
         }
          */
        
-
+/*
         badBubbleTimerRestart[bubbleNumber] = [NSTimer scheduledTimerWithTimeInterval:1.8
                                                                   target:self
                                                                 selector:@selector(startBadDisplayTimer)
                                                                 userInfo:@(bubbleNumber)
                                                                  repeats:NO];
+*/
 
     }
     else{
@@ -321,9 +392,15 @@ BOOL goodBubbleBeingDisplayed = NO;
         BOOL overlapping = NO;
         
         do{
-            xPos = arc4random_uniform(screenWidth - 100);
-            yPos = arc4random_uniform(screenHeight - 100);
             overlapping = NO;
+            
+            do{
+                xPos = arc4random_uniform(screenWidth - 50);
+            }while(xPos < 50);
+            
+            do{
+                yPos = arc4random_uniform(screenHeight - 50);
+            }while(yPos < 100);
             
             bubble.center = CGPointMake(xPos, yPos);
             
@@ -349,13 +426,15 @@ BOOL goodBubbleBeingDisplayed = NO;
         //need to create an array of timers
         //use tags or position in bubble array to index
         //create timer at same index within bubbleTimer array
-        
+
+/*
         NSTimer *tempTimer = goodBubbleTimers[bubbleNumber];
         
         if(tempTimer != nil){
             [tempTimer invalidate];
             tempTimer = nil;
         }
+ */
         
         /*
         if (goodBubbleTimers[bubbleNumber] != nil){
@@ -421,7 +500,7 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                         target:self
                                                       selector:@selector(badBubbleTimer:)
                                                       userInfo:@(i)
-                                                       repeats:YES];
+                                                       repeats:NO];
 
         [badBubbleTimers addObject:tempTimerBad];
         
@@ -429,10 +508,11 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                               target:self
                                                             selector:@selector(goodBubbleTimer:)
                                                             userInfo:@(i)
-                                                             repeats:YES];
+                                                             repeats:NO];
         
         [goodBubbleTimers addObject:tempTimerGood];
-        
+
+/*
         NSTimer *badTimerRestart = [NSTimer scheduledTimerWithTimeInterval:1.8
                                                                    target:self
                                                                  selector:@selector(startBadTimer:)
@@ -446,10 +526,14 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                                   userInfo:@(i)
                                                                    repeats:NO];
         [goodBubbleTimerRestart addObject:goodTimerRestart];
-
+*/
+ 
     }
 }
 
+
+//timers for restarting
+/*
 - (void)startBadTimer:(NSTimer *)sender{
     NSInteger bubbleNumber = [sender.userInfo integerValue];
     
@@ -469,7 +553,8 @@ BOOL goodBubbleBeingDisplayed = NO;
                                                                    userInfo:@(bubbleNumber)
                                                                     repeats:YES];
 }
-
+*/
+ 
 - (void)restartBadTimer:(int)bubbleNumber{
     
 }
@@ -480,7 +565,8 @@ BOOL goodBubbleBeingDisplayed = NO;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
+
+/*
     UITapGestureRecognizer *singleTapBad = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBadSingleTap:)];
     _badBubble.userInteractionEnabled = YES;
     [_badBubble addGestureRecognizer:singleTapBad];
@@ -492,7 +578,8 @@ BOOL goodBubbleBeingDisplayed = NO;
     UITapGestureRecognizer *singleTapGood = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGoodSingleTap:)];
     _goodBubble.userInteractionEnabled = YES;
     [_goodBubble addGestureRecognizer:singleTapGood];
-    
+*/
+ 
     screenWidth = [[UIScreen mainScreen] bounds].size.width;
     screenHeight = [[UIScreen mainScreen] bounds].size.height;
     
@@ -508,22 +595,35 @@ BOOL goodBubbleBeingDisplayed = NO;
     [self createBadBubbles];
     [self createGoodBubbles];
     [self createTimers];
-    
+    [self startTimeLeftTimer];
     
     
 /*
     //bad bubbles
     NSMutableArray * badBubbles = [NSArray arrayWithObjects:_badBubble, _badBubble2, nil];
 */
- 
-    [self startTimeLeftTimer];
+
+    /*
     [self startBadDisplayTimer];
     [self startGoodDisplayTimer];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) showAlert {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          
+                          initWithTitle:@""
+                          message:@"Game Over"
+                          delegate:nil
+                          cancelButtonTitle:@"Dismiss"
+                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 @end

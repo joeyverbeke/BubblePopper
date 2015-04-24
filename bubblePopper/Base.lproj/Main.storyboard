@@ -19,29 +19,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F50-qW-KmB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F50-qW-KmB">
                                 <rect key="frame" x="67" y="28" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badCircle.png" id="kZJ-HK-1kY">
-                                <rect key="frame" x="184" y="251" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="AVY-GK-gnt" appends="YES" id="1Kj-ID-BSi"/>
-                                </connections>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.14999999999999969" contentMode="scaleAspectFit" image="goodCircle.png" id="8oj-ux-nhm">
-                                <rect key="frame" x="46" y="133" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mJB-Xg-ZbC" appends="YES" id="m8h-AS-ZB6"/>
-                                </connections>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8C-Ew-nKb">
                                 <rect key="frame" x="211" y="28" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,18 +40,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badCircle.png" id="Run-pk-v45">
-                                <rect key="frame" x="174" y="103" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29331439850627983" green="0.56192059597598731" blue="0.82790798611111116" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="badBubble" destination="kZJ-HK-1kY" id="swW-Ik-ghF"/>
-                        <outlet property="badBubble2" destination="Run-pk-v45" id="deQ-RJ-1qw"/>
-                        <outlet property="goodBubble" destination="8oj-ux-nhm" id="LVM-Ct-vnv"/>
                         <outlet property="score" destination="zbc-x7-lc6" id="Uba-vZ-8az"/>
                         <outlet property="timeLeft" destination="F50-qW-KmB" id="so2-Wc-AaF"/>
                     </connections>
@@ -79,10 +55,6 @@
             <point key="canvasLocation" x="104" y="253"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="badCircle.png" width="100" height="100"/>
-        <image name="goodCircle.png" width="70" height="70"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
