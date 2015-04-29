@@ -21,6 +21,7 @@
 		D46C79D61ADE2D3000BD2842 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */; };
 		D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */; };
 		D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */; };
+		D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E054481AF08AEE00DF8270 /* Info-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bubbleTimer.m; sourceTree = "<group>"; };
 		D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleTimer.h; sourceTree = "<group>"; };
 		D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTimer.m; sourceTree = "<group>"; };
+		D4E054481AF08AEE00DF8270 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Info-50.png"; path = "../../bubblePopperImages/Info-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		D46C79AA1ADE2A7D00BD2842 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4E054481AF08AEE00DF8270 /* Info-50.png */,
 				D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */,
 				D46C79D31ADE2C4200BD2842 /* badCircle.png */,
 				D46C79AB1ADE2A7D00BD2842 /* Info.plist */,
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */,
 				D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */,
 				D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */,
 				D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */,

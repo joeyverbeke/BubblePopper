@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "BubblePopperBrain.h"
 #include <stdlib.h>
 
 @interface ViewController ()
-
+@property (nonatomic, strong) BubblePopperBrain *brain;
 @end
 
 @implementation ViewController
@@ -29,6 +30,12 @@ int goodPositionRand_X = 50;
 int goodPositionRand_Y = 50;
 BOOL showGoodBubble = NO;
 BOOL goodBubbleBeingDisplayed = NO;
+
+- (BubblePopperBrain *)brain
+{
+    if(!_brain) _brain = [[BubblePopperBrain alloc] init];
+    return _brain;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -597,6 +604,7 @@ BOOL goodBubbleBeingDisplayed = NO;
     [self createTimers];
     [self startTimeLeftTimer];
     
+    [self.brain checkIfHighScoresExist];
     
 /*
     //bad bubbles
