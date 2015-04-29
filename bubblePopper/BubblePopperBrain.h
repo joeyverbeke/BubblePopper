@@ -11,6 +11,8 @@
 @interface BubblePopperBrain : NSObject
 
 -(void)checkIfHighScoresExist;
--(void)addHighScore:(int)score;
+-(BOOL)scoreHighEnoughToAdd:(int)score;
+-(void)addHighScore:(int)score
+                   :(NSString*)name;
 
 @end

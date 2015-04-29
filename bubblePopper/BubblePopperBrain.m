@@ -60,8 +60,9 @@
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
+ 
+//Testing that ^ worked
+ 
     for(int i=0; i<10; i++){
         NSString *highScoreIndex = [NSString stringWithFormat:@"%d",i];
         NSString *highScoreNameIndex = [NSString stringWithFormat:@"%d",i];
@@ -76,12 +77,85 @@
         NSLog([NSString stringWithFormat:@"%d",highScore]);
 
     }
+    NSLog(@"");
 }
 
--(void)addHighScore:(int)score{
-    [self checkIfHighScoresExist];
+-(BOOL)scoreHighEnoughToAdd:(int)score{
     
+    for(int i=0; i<10; i++){
+        NSString *highScoreIndex = [NSString stringWithFormat:@"%d",i];
+        highScoreIndex = [highScoreIndex stringByAppendingString:@"highScore"];
+        
+        NSInteger highScoreAtIndex = [[NSUserDefaults standardUserDefaults] integerForKey:highScoreIndex];
+        
+        if(score >= highScoreAtIndex)
+            return YES;
+    }
+    return NO;
+}
+
+-(void)addHighScore:(int)score
+                   :(NSString*)name{
     
+    for(int i=0; i<10; i++){
+        NSString *highScoreIndex = [NSString stringWithFormat:@"%d",i];
+        highScoreIndex = [highScoreIndex stringByAppendingString:@"highScore"];
+        
+        NSInteger highScoreAtIndex = [[NSUserDefaults standardUserDefaults] integerForKey:highScoreIndex];
+        
+        if(score >= highScoreAtIndex){
+            NSString *highScoreNameIndex = [NSString stringWithFormat:@"%d",i];
+            highScoreNameIndex = [highScoreNameIndex stringByAppendingString:@"highScoreName"];
+            
+            NSString *highScoreNameAtIndex = [[NSUserDefaults standardUserDefaults] stringForKey:highScoreNameIndex];
+            
+            NSString *tempName = highScoreNameAtIndex;
+            NSInteger tempScore = highScoreAtIndex;
+            
+            [[NSUserDefaults standardUserDefaults] setInteger:score forKey:highScoreIndex];
+            [[NSUserDefaults standardUserDefaults] setObject:name forKey:highScoreNameIndex];
+            
+            i++;
+            
+            for(int j=i; j<10; j++){
+                NSString *transferName = tempName;
+                NSInteger transferScore = tempScore;
+                
+                highScoreNameIndex = [NSString stringWithFormat:@"%d",j];
+                highScoreNameIndex = [highScoreNameIndex stringByAppendingString:@"highScoreName"];
+                
+                highScoreIndex = [NSString stringWithFormat:@"%d",j];
+                highScoreIndex = [highScoreIndex stringByAppendingString:@"highScore"];
+                
+                tempName = [[NSUserDefaults standardUserDefaults] stringForKey:highScoreNameIndex];
+                tempScore = [[NSUserDefaults standardUserDefaults] integerForKey:highScoreIndex];
+                
+                [[NSUserDefaults standardUserDefaults] setInteger:transferScore forKey:highScoreIndex];
+                [[NSUserDefaults standardUserDefaults] setObject:transferName forKey:highScoreNameIndex];
+                
+                transferName = tempName;
+                transferScore = tempScore;
+            }
+            break;
+        }
+    }
+
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    for(int i=0; i<10; i++){
+        NSString *highScoreIndex = [NSString stringWithFormat:@"%d",i];
+        NSString *highScoreNameIndex = [NSString stringWithFormat:@"%d",i];
+        
+        highScoreIndex = [highScoreIndex stringByAppendingString:@"highScore"];
+        highScoreNameIndex = [highScoreNameIndex stringByAppendingString:@"highScoreName"];
+        
+        NSInteger highScore = [[NSUserDefaults standardUserDefaults] integerForKey:highScoreIndex];
+        NSString *highScoreName = [[NSUserDefaults standardUserDefaults] stringForKey:highScoreNameIndex];
+        
+        NSLog(highScoreName);
+        NSLog([NSString stringWithFormat:@"%d",highScore]);
+        
+    }
 }
 
 @end

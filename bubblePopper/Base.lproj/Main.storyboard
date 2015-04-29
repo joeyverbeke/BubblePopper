@@ -8,7 +8,7 @@
         <scene sceneID="LBE-JW-ivv">
             <objects>
                 <viewController id="9HR-cU-p9t" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dIp-My-hRL">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="startScreen" id="dIp-My-hRL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -19,7 +19,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="wGP-Zf-UFq"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" animates="NO" id="wGP-Zf-UFq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cuU-NE-vYG">
@@ -29,7 +29,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="y1o-WE-V85" kind="modal" id="IBn-Y2-Ppq"/>
+                                    <segue destination="y1o-WE-V85" kind="modal" animates="NO" id="IBn-Y2-Ppq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5VG-vW-HIl">
@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9eP-oN-p57" kind="modal" id="6Q7-Ab-TAg"/>
+                                    <segue destination="9eP-oN-p57" kind="modal" animates="NO" id="6Q7-Ab-TAg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,7 +65,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9HR-cU-p9t" kind="modal" id="SPU-0B-e2o"/>
+                                    <segue destination="9HR-cU-p9t" kind="modal" animates="NO" id="SPU-0B-e2o"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ehb-IA-Zbw">
@@ -124,6 +124,7 @@
                     <connections>
                         <outlet property="score" destination="zbc-x7-lc6" id="Uba-vZ-8az"/>
                         <outlet property="timeLeft" destination="F50-qW-KmB" id="so2-Wc-AaF"/>
+                        <segue destination="9HR-cU-p9t" kind="modal" identifier="segueToStartScreen" animates="NO" id="FAz-BC-DtB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -147,7 +148,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9HR-cU-p9t" kind="modal" id="IXq-lO-zN2"/>
+                                    <segue destination="9HR-cU-p9t" kind="modal" animates="NO" id="IXq-lO-zN2"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badCircle.png" id="zrY-Et-RqM">
@@ -202,6 +203,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SPU-0B-e2o"/>
+        <segue reference="FAz-BC-DtB"/>
     </inferredMetricsTieBreakers>
 </document>

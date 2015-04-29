@@ -256,7 +256,14 @@ BOOL goodBubbleBeingDisplayed = NO;
     [timerTimeLeft invalidate];
     timerTimeLeft = nil;
     
-    [self showAlert];
+    int userScore = (int)[self.score.text integerValue];
+    
+    if([self.brain scoreHighEnoughToAdd:userScore]){
+        [self showNewHighScoreAlert];
+    }
+    else{
+        [self showNoNewHighScoreAlert];
+    }
 }
 
 -(void)changeScore:(BOOL)increment{
@@ -606,6 +613,8 @@ BOOL goodBubbleBeingDisplayed = NO;
     
     [self.brain checkIfHighScoresExist];
     
+    [self.brain addHighScore:55 :@"Kimmy"];
+    
 /*
     //bad bubbles
     NSMutableArray * badBubbles = [NSArray arrayWithObjects:_badBubble, _badBubble2, nil];
@@ -622,16 +631,42 @@ BOOL goodBubbleBeingDisplayed = NO;
     // Dispose of any resources that can be recreated.
 }
 
-- (void) showAlert {
+- (void)showNewHighScoreAlert {
+    
+    NSString *title = [@"New High Score: " stringByAppendingString:self.score.text];
+    
+    UIAlertView *highScoreAlert = [[UIAlertView alloc]
+                          
+                          initWithTitle:title
+                          message:@"Please Enter Your Name"
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"OK", nil];
+    highScoreAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [highScoreAlert show];
+}
+
+- (void)showNoNewHighScoreAlert {
     UIAlertView *alert = [[UIAlertView alloc]
                           
-                          initWithTitle:@""
-                          message:@"Game Over"
+                          initWithTitle:@"Game Over"
+                          message:nil
                           delegate:nil
-                          cancelButtonTitle:@"Dismiss"
-                          otherButtonTitles:nil];
-    
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil];
     [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString *name = [alertView textFieldAtIndex:0].text;
+        int userScore = (int)[self.score.text integerValue];
+        
+        [self.brain addHighScore:userScore:name];
+    }
+    
+    //make work
+    [self performSegueWithIdentifier:@"segueToStartScreen" sender:self];
 }
 
 @end
