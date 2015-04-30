@@ -22,6 +22,7 @@
 		D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */; };
 		D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */; };
 		D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E054481AF08AEE00DF8270 /* Info-50.png */; };
+		D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276481AF2090C005137DE /* HighScoresViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleTimer.h; sourceTree = "<group>"; };
 		D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTimer.m; sourceTree = "<group>"; };
 		D4E054481AF08AEE00DF8270 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Info-50.png"; path = "../../bubblePopperImages/Info-50.png"; sourceTree = "<group>"; };
+		D4F276481AF2090C005137DE /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoresViewController.m; path = ../HighScoresViewController.m; sourceTree = "<group>"; };
+		D4F2764A1AF20932005137DE /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoresViewController.h; path = ../HighScoresViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		D46C79A91ADE2A7D00BD2842 /* bubblePopper */ = {
 			isa = PBXGroup;
 			children = (
+				D4F2764A1AF20932005137DE /* HighScoresViewController.h */,
+				D4F276481AF2090C005137DE /* HighScoresViewController.m */,
 				D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */,
 				D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */,
 				D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */,
@@ -254,6 +259,7 @@
 				D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */,
 				D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */,
 				D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */,
+				D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */,
 				D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */,
 				D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */,
 				D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */,

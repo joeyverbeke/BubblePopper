@@ -474,7 +474,7 @@ BOOL goodBubbleBeingDisplayed = NO;
 
     for(int i=0; i<5; i++){
         UIButton *bad = [UIButton buttonWithType:UIButtonTypeCustom];
-        bad.center = CGPointMake(screenWidth / 2 + i*10, screenHeight / 2);
+        bad.center = CGPointMake(screenWidth * 2, screenHeight * 2);
         [bad setBackgroundImage:[UIImage imageNamed:@"badCircle.png"] forState:UIControlStateNormal];
         [bad sizeToFit];
         [bad addTarget:self action:@selector(badPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -493,7 +493,7 @@ BOOL goodBubbleBeingDisplayed = NO;
     
     for(int i=0; i<5; i++){
         UIButton *good = [UIButton buttonWithType:UIButtonTypeCustom];
-        good.center = CGPointMake(screenWidth / 2 + i*10, screenHeight / 2 + 200);
+        good.center = CGPointMake(screenWidth * 2, screenHeight * 2);
         [good setBackgroundImage:[UIImage imageNamed:@"goodCircle.png"] forState:UIControlStateNormal];
         [good sizeToFit];
         [good addTarget:self action:@selector(goodPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -579,20 +579,6 @@ BOOL goodBubbleBeingDisplayed = NO;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-
-/*
-    UITapGestureRecognizer *singleTapBad = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBadSingleTap:)];
-    _badBubble.userInteractionEnabled = YES;
-    [_badBubble addGestureRecognizer:singleTapBad];
-
-    UITapGestureRecognizer *singleTapBad2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleBadSingleTap:)];
-    _badBubble2.userInteractionEnabled = YES;
-    [_badBubble2 addGestureRecognizer:singleTapBad2];
-    
-    UITapGestureRecognizer *singleTapGood = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGoodSingleTap:)];
-    _goodBubble.userInteractionEnabled = YES;
-    [_goodBubble addGestureRecognizer:singleTapGood];
-*/
  
     screenWidth = [[UIScreen mainScreen] bounds].size.width;
     screenHeight = [[UIScreen mainScreen] bounds].size.height;
@@ -612,8 +598,6 @@ BOOL goodBubbleBeingDisplayed = NO;
     [self startTimeLeftTimer];
     
     [self.brain checkIfHighScoresExist];
-    
-    [self.brain addHighScore:55 :@"Kimmy"];
     
 /*
     //bad bubbles
@@ -651,7 +635,7 @@ BOOL goodBubbleBeingDisplayed = NO;
                           
                           initWithTitle:@"Game Over"
                           message:nil
-                          delegate:nil
+                          delegate:self
                           cancelButtonTitle:@"OK"
                           otherButtonTitles: nil];
     [alert show];

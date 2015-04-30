@@ -28,8 +28,8 @@
 -(void)checkIfHighScoresExist{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if (![defaults objectForKey:@"firstTimeBeingRun"]){
-        [defaults setObject:[NSDate date] forKey:@"firstTimeBeingRun"];
+    if (![defaults objectForKey:@"VeryFirstRun"]){
+        [defaults setObject:[NSDate date] forKey:@"VeryFirstRun"];
     
         int highScore = 110;
         
