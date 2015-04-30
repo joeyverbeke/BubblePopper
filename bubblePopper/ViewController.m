@@ -39,7 +39,9 @@ BOOL goodBubbleBeingDisplayed = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"subtle_white_feathers_@2X.png"]];
+
 }
 
 /*
@@ -199,6 +201,9 @@ BOOL goodBubbleBeingDisplayed = NO;
     intFromTimerLabel--;
     
     self.timeLeft.text = [NSString stringWithFormat:@"%ld", (long)intFromTimerLabel];
+    
+    if(intFromTimerLabel == 5)
+        self.timeLeft.textColor = [UIColor redColor];
     
     if(intFromTimerLabel == 0)
         [self gameOver];

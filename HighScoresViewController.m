@@ -21,6 +21,11 @@ CGFloat nameCellWidth = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"subtle_white_feathers_@2X.png"]];
+    
+    self.highScoresTable.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+    self.highScoresNamesTable.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+    
     highScores = [[NSMutableArray alloc] init];
     highScoresNames = [[NSMutableArray alloc] init];
     
@@ -59,7 +64,7 @@ CGFloat nameCellWidth = 0;
     
     if(tableView.tag == 0){
         cell.textLabel.text = [highScores objectAtIndex:indexPath.row];
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
         //dynamic resize
         
@@ -73,7 +78,7 @@ CGFloat nameCellWidth = 0;
     }
     else if (tableView.tag == 1){
         cell.textLabel.text = [highScoresNames objectAtIndex:indexPath.row];
-        cell.textLabel.textAlignment = NSTextAlignmentRight;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
         if([self widthOfString:[highScoresNames objectAtIndex:indexPath.row] withFont:font] > nameCellWidth)
             nameCellWidth = [self widthOfString:[highScores objectAtIndex:indexPath.row] withFont:font];
@@ -84,9 +89,9 @@ CGFloat nameCellWidth = 0;
                                 cell.frame.size.height);
     }
     
-    cell.backgroundColor = [UIColor colorWithRed:0/256.0 green:0/256.0 blue:0/256.0 alpha:1.0];
+    cell.backgroundColor = [UIColor colorWithRed:0/256.0 green:0/256.0 blue:0/256.0 alpha:0.0];
     
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:(indexPath.row * 16)/255 green:(indexPath.row * 16)/255 blue: (indexPath.row * 16) /255.0 alpha:1.0];
     
     return cell;
 }

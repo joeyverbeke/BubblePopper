@@ -17,6 +17,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *highScoresTable;
+@property (weak, nonatomic) IBOutlet UITableView *highScoresNamesTable;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 

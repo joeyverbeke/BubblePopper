@@ -23,6 +23,10 @@
 		D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */; };
 		D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E054481AF08AEE00DF8270 /* Info-50.png */; };
 		D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276481AF2090C005137DE /* HighScoresViewController.m */; };
+		D4F2764C1AF2A49A005137DE /* instructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F2764B1AF2A49A005137DE /* instructionsViewController.m */; };
+		D4F2764F1AF2A8C3005137DE /* Left-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F2764E1AF2A8C3005137DE /* Left-50.png */; };
+		D4F276511AF2A9CE005137DE /* subtle_white_feathers_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */; };
+		D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276521AF2AE04005137DE /* startScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,12 @@
 		D4E054481AF08AEE00DF8270 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Info-50.png"; path = "../../bubblePopperImages/Info-50.png"; sourceTree = "<group>"; };
 		D4F276481AF2090C005137DE /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoresViewController.m; path = ../HighScoresViewController.m; sourceTree = "<group>"; };
 		D4F2764A1AF20932005137DE /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoresViewController.h; path = ../HighScoresViewController.h; sourceTree = "<group>"; };
+		D4F2764B1AF2A49A005137DE /* instructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = instructionsViewController.m; sourceTree = "<group>"; };
+		D4F2764D1AF2A4A6005137DE /* instructionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = instructionsViewController.h; sourceTree = "<group>"; };
+		D4F2764E1AF2A8C3005137DE /* Left-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Left-50.png"; path = "../../../../Downloads/Left-50.png"; sourceTree = "<group>"; };
+		D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "subtle_white_feathers_@2X.png"; path = "../../bubblePopperImages/subtle_white_feathers_@2X.png"; sourceTree = "<group>"; };
+		D4F276521AF2AE04005137DE /* startScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startScreenViewController.m; sourceTree = "<group>"; };
+		D4F276541AF2AE12005137DE /* startScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = startScreenViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +119,11 @@
 				D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */,
 				D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */,
 				D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */,
+				D4F276541AF2AE12005137DE /* startScreenViewController.h */,
+				D4F276521AF2AE04005137DE /* startScreenViewController.m */,
 				D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */,
+				D4F2764B1AF2A49A005137DE /* instructionsViewController.m */,
+				D4F2764D1AF2A4A6005137DE /* instructionsViewController.h */,
 				D4301C0B1AE3034D00F82DD9 /* BubblePopperBrain.h */,
 				D46C79AE1ADE2A7D00BD2842 /* AppDelegate.h */,
 				D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */,
@@ -127,6 +141,8 @@
 		D46C79AA1ADE2A7D00BD2842 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */,
+				D4F2764E1AF2A8C3005137DE /* Left-50.png */,
 				D4E054481AF08AEE00DF8270 /* Info-50.png */,
 				D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */,
 				D46C79D31ADE2C4200BD2842 /* badCircle.png */,
@@ -234,10 +250,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */,
+				D4F276511AF2A9CE005137DE /* subtle_white_feathers_@2X.png in Resources */,
 				D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */,
 				D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */,
 				D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */,
 				D46C79BB1ADE2A7D00BD2842 /* Images.xcassets in Resources */,
+				D4F2764F1AF2A8C3005137DE /* Left-50.png in Resources */,
 				D4301C0D1AE35E1D00F82DD9 /* goodCircle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,10 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F2764C1AF2A49A005137DE /* instructionsViewController.m in Sources */,
 				D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */,
 				D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */,
 				D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */,
 				D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */,
+				D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */,
 				D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */,
 				D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */,
 				D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */,
