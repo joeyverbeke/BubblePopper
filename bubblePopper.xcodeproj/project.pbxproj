@@ -27,6 +27,7 @@
 		D4F2764F1AF2A8C3005137DE /* Left-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F2764E1AF2A8C3005137DE /* Left-50.png */; };
 		D4F276511AF2A9CE005137DE /* subtle_white_feathers_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */; };
 		D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276521AF2AE04005137DE /* startScreenViewController.m */; };
+		D4F276561AF3266B005137DE /* gameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276551AF3266B005137DE /* gameplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "subtle_white_feathers_@2X.png"; path = "../../bubblePopperImages/subtle_white_feathers_@2X.png"; sourceTree = "<group>"; };
 		D4F276521AF2AE04005137DE /* startScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startScreenViewController.m; sourceTree = "<group>"; };
 		D4F276541AF2AE12005137DE /* startScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = startScreenViewController.h; sourceTree = "<group>"; };
+		D4F276551AF3266B005137DE /* gameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameplayViewController.m; sourceTree = "<group>"; };
+		D4F276571AF32678005137DE /* gameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameplayViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			children = (
 				D4F2764A1AF20932005137DE /* HighScoresViewController.h */,
 				D4F276481AF2090C005137DE /* HighScoresViewController.m */,
+				D4F276551AF3266B005137DE /* gameplayViewController.m */,
+				D4F276571AF32678005137DE /* gameplayViewController.h */,
 				D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */,
 				D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */,
 				D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */,
@@ -282,6 +287,7 @@
 				D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */,
 				D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */,
 				D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */,
+				D4F276561AF3266B005137DE /* gameplayViewController.m in Sources */,
 				D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */,
 				D4301C0A1AE302FE00F82DD9 /* BubblePopperBrain.m in Sources */,
 			);

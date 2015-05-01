@@ -17,8 +17,8 @@
 }
 @property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
 @property (weak, nonatomic) IBOutlet UITextField *goodLuckLabel;
-@property (weak, nonatomic) IBOutlet UITextField *goodBubbleLabel;
-@property (weak, nonatomic) IBOutlet UITextField *badBubbleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodBubbleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badBubbleLabel;
 
 @end
 

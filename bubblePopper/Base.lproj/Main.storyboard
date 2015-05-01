@@ -76,7 +76,7 @@
                                     <segue destination="9HR-cU-p9t" kind="modal" animates="NO" id="SPU-0B-e2o"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="highScoresTable" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ehb-IA-Zbw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="highScoresTable" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ehb-IA-Zbw">
                                 <rect key="frame" x="160" y="108" width="95" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                                     <outlet property="delegate" destination="9eP-oN-p57" id="Zv6-SZ-pae"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="highScoresNamesTable" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="elg-6O-XQv">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="highScoresNamesTable" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="elg-6O-XQv">
                                 <rect key="frame" x="65" y="108" width="95" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="397" y="239"/>
         </scene>
-        <!--View Controller-->
+        <!--Gameplay View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="gameplayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="gameView" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,19 +152,44 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="goodBubble" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="41z-y6-9pq" userLabel="goodBubble">
+                                <rect key="frame" x="125" y="106" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="goodCircle.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goodPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tmX-Tl-mW5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="badBubble" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tmU-kR-kWO" userLabel="badBubble">
+                                <rect key="frame" x="83" y="246" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="badCircle.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="badPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PxO-yZ-h4l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588237" green="0.80392156862745101" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rBd-yo-mga" appends="YES" id="v5e-ZP-CyU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="uOZ-0I-NGp"/>
                     <connections>
+                        <outlet property="badBubble" destination="tmU-kR-kWO" id="qsm-2M-foL"/>
+                        <outlet property="goodBubble" destination="41z-y6-9pq" id="whg-Vk-R5F"/>
                         <outlet property="score" destination="zbc-x7-lc6" id="Uba-vZ-8az"/>
                         <outlet property="timeLeft" destination="F50-qW-KmB" id="so2-Wc-AaF"/>
                         <segue destination="9HR-cU-p9t" kind="modal" identifier="segueToStartScreen" animates="NO" id="FAz-BC-DtB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="AVY-GK-gnt"/>
-                <tapGestureRecognizer id="mJB-Xg-ZbC"/>
+                <tapGestureRecognizer id="rBd-yo-mga"/>
             </objects>
             <point key="canvasLocation" x="397" y="-490"/>
         </scene>
@@ -194,18 +219,6 @@
                                 <rect key="frame" x="30" y="223" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pop these" minimumFontSize="17" id="JSX-Gm-dYI">
-                                <rect key="frame" x="165" y="243" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Don't pop these" minimumFontSize="17" id="QCw-ve-8YY">
-                                <rect key="frame" x="165" y="348" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Left-50.png" id="sbw-Fw-99k">
                                 <rect key="frame" x="112" y="233" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,17 +227,31 @@
                                 <rect key="frame" x="112" y="338" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Luck!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RQ4-yR-9pq">
-                                <rect key="frame" x="16" y="453" width="274" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AJw-u5-oIx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AJw-u5-oIx">
                                 <rect key="frame" x="15" y="135" width="289" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bad" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NPx-l4-jch">
+                                <rect key="frame" x="175" y="317" width="129" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="good" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fFj-PW-67p">
+                                <rect key="frame" x="175" y="225" width="129" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Luck!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RQ4-yR-9pq">
+                                <rect key="frame" x="23" y="451" width="274" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -232,8 +259,8 @@
                         <color key="backgroundColor" red="0.12941176470588237" green="0.80392156862745101" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="badBubbleLabel" destination="QCw-ve-8YY" id="F2u-Gy-0DJ"/>
-                        <outlet property="goodBubbleLabel" destination="JSX-Gm-dYI" id="e2r-zO-Des"/>
+                        <outlet property="badBubbleLabel" destination="NPx-l4-jch" id="tKc-qP-IIp"/>
+                        <outlet property="goodBubbleLabel" destination="fFj-PW-67p" id="MiY-Nd-vxp"/>
                         <outlet property="instructionsLabel" destination="AJw-u5-oIx" id="Ds0-aZ-Htc"/>
                     </connections>
                 </viewController>
@@ -254,6 +281,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SPU-0B-e2o"/>
+        <segue reference="IXq-lO-zN2"/>
     </inferredMetricsTieBreakers>
 </document>

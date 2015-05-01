@@ -20,8 +20,11 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"subtle_white_feathers_@2X.png"]];
     
     self.instructionsLabel.text = @"You have 25 seconds to pop \nas many bubbles as you can!";
-    
     self.instructionsLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.goodBubbleLabel.text = @"Tap these when \nthey appear!";
+    
+    self.badBubbleLabel.text = @"Tap anywhere but on these when they appear!";
     
 }
 
