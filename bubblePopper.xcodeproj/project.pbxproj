@@ -9,18 +9,21 @@
 /* Begin PBXBuildFile section */
 		D4301C0A1AE302FE00F82DD9 /* BubblePopperBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */; };
 		D4301C0D1AE35E1D00F82DD9 /* goodCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */; };
+		D45AA6141AF358E700571CFB /* Back-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D45AA6131AF358E700571CFB /* Back-100.png */; };
+		D45AA6191AF36D9500571CFB /* bubblePopper_bad.wav in Resources */ = {isa = PBXBuildFile; fileRef = D45AA6151AF36D9500571CFB /* bubblePopper_bad.wav */; };
+		D45AA61A1AF36D9500571CFB /* bubblePopper_good.wav in Resources */ = {isa = PBXBuildFile; fileRef = D45AA6161AF36D9500571CFB /* bubblePopper_good.wav */; };
+		D45AA61B1AF36D9500571CFB /* bubblePopper_highScore.wav in Resources */ = {isa = PBXBuildFile; fileRef = D45AA6171AF36D9500571CFB /* bubblePopper_highScore.wav */; };
+		D45AA61C1AF36D9500571CFB /* bubblePopper_noHighScore.wav in Resources */ = {isa = PBXBuildFile; fileRef = D45AA6181AF36D9500571CFB /* bubblePopper_noHighScore.wav */; };
+		D45AA6201AF3736900571CFB /* bubblePopper_themeSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D45AA61F1AF3736900571CFB /* bubblePopper_themeSong.mp3 */; };
 		D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79AC1ADE2A7D00BD2842 /* main.m */; };
 		D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */; };
 		D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46C79B11ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld */; };
-		D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79B51ADE2A7D00BD2842 /* ViewController.m */; };
 		D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46C79B71ADE2A7D00BD2842 /* Main.storyboard */; };
 		D46C79BB1ADE2A7D00BD2842 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */; };
 		D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46C79BC1ADE2A7D00BD2842 /* LaunchScreen.xib */; };
 		D46C79CA1ADE2A7E00BD2842 /* bubblePopperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C79C91ADE2A7E00BD2842 /* bubblePopperTests.m */; };
 		D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D46C79D31ADE2C4200BD2842 /* badCircle.png */; };
 		D46C79D61ADE2D3000BD2842 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */; };
-		D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */; };
-		D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */; };
 		D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E054481AF08AEE00DF8270 /* Info-50.png */; };
 		D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276481AF2090C005137DE /* HighScoresViewController.m */; };
 		D4F2764C1AF2A49A005137DE /* instructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F2764B1AF2A49A005137DE /* instructionsViewController.m */; };
@@ -28,6 +31,8 @@
 		D4F276511AF2A9CE005137DE /* subtle_white_feathers_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */; };
 		D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276521AF2AE04005137DE /* startScreenViewController.m */; };
 		D4F276561AF3266B005137DE /* gameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F276551AF3266B005137DE /* gameplayViewController.m */; };
+		D4F2765B1AF34F30005137DE /* badBubbleVector.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F2765A1AF34F30005137DE /* badBubbleVector.png */; };
+		D4F2765D1AF35620005137DE /* bubblePopper.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F2765C1AF35620005137DE /* bubblePopper.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +49,18 @@
 		D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubblePopperBrain.m; sourceTree = "<group>"; };
 		D4301C0B1AE3034D00F82DD9 /* BubblePopperBrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubblePopperBrain.h; sourceTree = "<group>"; };
 		D4301C0C1AE35E1D00F82DD9 /* goodCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goodCircle.png; path = ../../bubblePopperImages/goodCircle.png; sourceTree = "<group>"; };
+		D45AA6131AF358E700571CFB /* Back-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-100.png"; path = "../../bubblePopperImages/Back-100.png"; sourceTree = "<group>"; };
+		D45AA6151AF36D9500571CFB /* bubblePopper_bad.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubblePopper_bad.wav; path = ../../bubblePopperImages/Sounds_wav/bubblePopper_bad.wav; sourceTree = "<group>"; };
+		D45AA6161AF36D9500571CFB /* bubblePopper_good.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubblePopper_good.wav; path = ../../bubblePopperImages/Sounds_wav/bubblePopper_good.wav; sourceTree = "<group>"; };
+		D45AA6171AF36D9500571CFB /* bubblePopper_highScore.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubblePopper_highScore.wav; path = ../../bubblePopperImages/Sounds_wav/bubblePopper_highScore.wav; sourceTree = "<group>"; };
+		D45AA6181AF36D9500571CFB /* bubblePopper_noHighScore.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubblePopper_noHighScore.wav; path = ../../bubblePopperImages/Sounds_wav/bubblePopper_noHighScore.wav; sourceTree = "<group>"; };
+		D45AA61F1AF3736900571CFB /* bubblePopper_themeSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bubblePopper_themeSong.mp3; path = ../../bubblePopperImages/Sounds_mp3/bubblePopper_themeSong.mp3; sourceTree = "<group>"; };
 		D46C79A71ADE2A7D00BD2842 /* bubblePopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bubblePopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46C79AB1ADE2A7D00BD2842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46C79AC1ADE2A7D00BD2842 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D46C79AE1ADE2A7D00BD2842 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D46C79B21ADE2A7D00BD2842 /* bubblePopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bubblePopper.xcdatamodel; sourceTree = "<group>"; };
-		D46C79B41ADE2A7D00BD2842 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D46C79B51ADE2A7D00BD2842 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D46C79B81ADE2A7D00BD2842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D46C79BD1ADE2A7D00BD2842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,9 +69,6 @@
 		D46C79C91ADE2A7E00BD2842 /* bubblePopperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bubblePopperTests.m; sourceTree = "<group>"; };
 		D46C79D31ADE2C4200BD2842 /* badCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badCircle.png; path = ../../bubblePopperImages/badCircle.png; sourceTree = "<group>"; };
 		D46C79D51ADE2D3000BD2842 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bubbleTimer.m; sourceTree = "<group>"; };
-		D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BubbleTimer.h; sourceTree = "<group>"; };
-		D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTimer.m; sourceTree = "<group>"; };
 		D4E054481AF08AEE00DF8270 /* Info-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Info-50.png"; path = "../../bubblePopperImages/Info-50.png"; sourceTree = "<group>"; };
 		D4F276481AF2090C005137DE /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoresViewController.m; path = ../HighScoresViewController.m; sourceTree = "<group>"; };
 		D4F2764A1AF20932005137DE /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoresViewController.h; path = ../HighScoresViewController.h; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 		D4F276541AF2AE12005137DE /* startScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = startScreenViewController.h; sourceTree = "<group>"; };
 		D4F276551AF3266B005137DE /* gameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameplayViewController.m; sourceTree = "<group>"; };
 		D4F276571AF32678005137DE /* gameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameplayViewController.h; sourceTree = "<group>"; };
+		D4F2765A1AF34F30005137DE /* badBubbleVector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badBubbleVector.png; path = ../../bubblePopperImages/badBubbleVector.png; sourceTree = "<group>"; };
+		D4F2765C1AF35620005137DE /* bubblePopper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubblePopper.png; path = ../../bubblePopperImages/bubblePopper.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +129,6 @@
 				D4F276481AF2090C005137DE /* HighScoresViewController.m */,
 				D4F276551AF3266B005137DE /* gameplayViewController.m */,
 				D4F276571AF32678005137DE /* gameplayViewController.h */,
-				D4B2A8F51AE58867005ABDF9 /* BubbleTimer.h */,
-				D4B2A8F61AE5888A005ABDF9 /* BubbleTimer.m */,
-				D4B2A8F31AE58819005ABDF9 /* bubbleTimer.m */,
 				D4F276541AF2AE12005137DE /* startScreenViewController.h */,
 				D4F276521AF2AE04005137DE /* startScreenViewController.m */,
 				D4301C091AE302FE00F82DD9 /* BubblePopperBrain.m */,
@@ -132,8 +137,6 @@
 				D4301C0B1AE3034D00F82DD9 /* BubblePopperBrain.h */,
 				D46C79AE1ADE2A7D00BD2842 /* AppDelegate.h */,
 				D46C79AF1ADE2A7D00BD2842 /* AppDelegate.m */,
-				D46C79B41ADE2A7D00BD2842 /* ViewController.h */,
-				D46C79B51ADE2A7D00BD2842 /* ViewController.m */,
 				D46C79B71ADE2A7D00BD2842 /* Main.storyboard */,
 				D46C79BA1ADE2A7D00BD2842 /* Images.xcassets */,
 				D46C79BC1ADE2A7D00BD2842 /* LaunchScreen.xib */,
@@ -146,6 +149,14 @@
 		D46C79AA1ADE2A7D00BD2842 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D45AA61F1AF3736900571CFB /* bubblePopper_themeSong.mp3 */,
+				D45AA6151AF36D9500571CFB /* bubblePopper_bad.wav */,
+				D45AA6161AF36D9500571CFB /* bubblePopper_good.wav */,
+				D45AA6171AF36D9500571CFB /* bubblePopper_highScore.wav */,
+				D45AA6181AF36D9500571CFB /* bubblePopper_noHighScore.wav */,
+				D45AA6131AF358E700571CFB /* Back-100.png */,
+				D4F2765C1AF35620005137DE /* bubblePopper.png */,
+				D4F2765A1AF34F30005137DE /* badBubbleVector.png */,
 				D4F276501AF2A9CE005137DE /* subtle_white_feathers_@2X.png */,
 				D4F2764E1AF2A8C3005137DE /* Left-50.png */,
 				D4E054481AF08AEE00DF8270 /* Info-50.png */,
@@ -255,13 +266,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E054491AF08AEE00DF8270 /* Info-50.png in Resources */,
+				D4F2765D1AF35620005137DE /* bubblePopper.png in Resources */,
 				D4F276511AF2A9CE005137DE /* subtle_white_feathers_@2X.png in Resources */,
+				D45AA61B1AF36D9500571CFB /* bubblePopper_highScore.wav in Resources */,
 				D46C79B91ADE2A7D00BD2842 /* Main.storyboard in Resources */,
+				D45AA6191AF36D9500571CFB /* bubblePopper_bad.wav in Resources */,
 				D46C79D41ADE2C4200BD2842 /* badCircle.png in Resources */,
+				D45AA61A1AF36D9500571CFB /* bubblePopper_good.wav in Resources */,
 				D46C79BE1ADE2A7D00BD2842 /* LaunchScreen.xib in Resources */,
+				D4F2765B1AF34F30005137DE /* badBubbleVector.png in Resources */,
+				D45AA6201AF3736900571CFB /* bubblePopper_themeSong.mp3 in Resources */,
 				D46C79BB1ADE2A7D00BD2842 /* Images.xcassets in Resources */,
+				D45AA6141AF358E700571CFB /* Back-100.png in Resources */,
 				D4F2764F1AF2A8C3005137DE /* Left-50.png in Resources */,
 				D4301C0D1AE35E1D00F82DD9 /* goodCircle.png in Resources */,
+				D45AA61C1AF36D9500571CFB /* bubblePopper_noHighScore.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,13 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F2764C1AF2A49A005137DE /* instructionsViewController.m in Sources */,
-				D4B2A8F71AE5888A005ABDF9 /* BubbleTimer.m in Sources */,
 				D46C79B31ADE2A7D00BD2842 /* bubblePopper.xcdatamodeld in Sources */,
 				D46C79B01ADE2A7D00BD2842 /* AppDelegate.m in Sources */,
 				D4F276491AF2090C005137DE /* HighScoresViewController.m in Sources */,
 				D4F276531AF2AE04005137DE /* startScreenViewController.m in Sources */,
-				D46C79B61ADE2A7D00BD2842 /* ViewController.m in Sources */,
-				D4B2A8F41AE58819005ABDF9 /* bubbleTimer.m in Sources */,
 				D4F276561AF3266B005137DE /* gameplayViewController.m in Sources */,
 				D46C79AD1ADE2A7D00BD2842 /* main.m in Sources */,
 				D4301C0A1AE302FE00F82DD9 /* BubblePopperBrain.m in Sources */,

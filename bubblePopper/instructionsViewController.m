@@ -24,7 +24,7 @@
     
     self.goodBubbleLabel.text = @"Tap these when \nthey appear!";
     
-    self.badBubbleLabel.text = @"Tap anywhere but on these when they appear!";
+    self.badBubbleLabel.text = @"Don't tap on these! Tap anywhere else!";
     
 }
 

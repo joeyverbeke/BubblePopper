@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Joey Verbeke. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import <Foundation/Foundation.h>
 #import "gameplayViewController.h"
 #import "BubblePopperBrain.h"
@@ -13,6 +15,8 @@
 
 @interface gameplayViewController ()
 @property (nonatomic, strong) BubblePopperBrain *brain;
+@property (strong, nonatomic) AVAudioPlayer *backgroundMusicPlayer;
+@property (strong, nonatomic) AVAudioPlayer *soundEffectPlayer;
 @end
 
 @implementation gameplayViewController
@@ -44,8 +48,6 @@
 
 -(void)handleTapFrom:(UITapGestureRecognizer *)recognizer{
     if(!self.badBubble.hidden){
-        NSLog(@"---");
-        NSLog(@"UIView tapped");
         self.badBubble.hidden = YES;
         [self displayBubble];
     }
@@ -98,6 +100,9 @@
 }
 
 -(void)gameOver{
+    [timerTimeLeft invalidate];
+    timerTimeLeft = nil;
+    
     int userScore = (int)[self.score.text integerValue];
     
     if([self.brain scoreHighEnoughToAdd:userScore]){
@@ -116,23 +121,35 @@
     if(increment)
         scoreInt += 10;
     else
-        scoreInt -= 20;
+        scoreInt -= 50;
     
     self.score.text = [NSString stringWithFormat:@"%ld", (long)scoreInt];
 }
 
+-(void)playSoundEffect:(NSString*)soundEffectName{
+    NSString *soundEffectPath = [[NSBundle mainBundle] pathForResource:soundEffectName ofType:@"wav"];
+    NSURL *soundEffectURL = [NSURL fileURLWithPath:soundEffectPath];
+    
+    NSError *error;
+    self.soundEffectPlayer = [[AVAudioPlayer alloc]
+                              initWithContentsOfURL:soundEffectURL error:&error];
+    [self.soundEffectPlayer prepareToPlay];
+    [self.soundEffectPlayer play];
+}
+
 - (IBAction)badPressed:(UIButton *)sender {
-    NSLog(@"---");
-    NSLog(@"bad");
-    NSLog(@"%li", (long)sender.tag);
+    
+    [self playSoundEffect:@"bubblePopper_bad"];
+
     sender.hidden = YES;
     [self changeScore:NO];
     [self displayBubble];
 }
 
 - (IBAction)goodPressed:(UIButton *)sender {
-//    NSLog(@"good");
-//    NSLog(@"%li", (long)sender.tag);
+    
+    [self playSoundEffect:@"bubblePopper_good"];
+    
     sender.hidden = YES;
     [self changeScore:YES];
     [self displayBubble];
@@ -142,9 +159,20 @@
     [super viewDidAppear:animated];
     
     [self startTimeLeftTimer];
+    
+    NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"bubblePopper_themeSong" ofType:@"mp3"];
+    NSURL *backgroundMusicURL = [NSURL fileURLWithPath:backgroundMusicPath];
+    
+    NSError *error;
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc]
+                                  initWithContentsOfURL:backgroundMusicURL error:&error];
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
 }
 
 - (void)showNewHighScoreAlert {
+    
+    [self playSoundEffect:@"bubblePopper_highScore"];
     
     NSString *title = [@"New High Score: " stringByAppendingString:self.score.text];
     
@@ -160,6 +188,9 @@
 }
 
 - (void)showNoNewHighScoreAlert {
+    
+    [self playSoundEffect:@"bubblePopper_noHighScore"];
+    
     UIAlertView *alert = [[UIAlertView alloc]
                           
                           initWithTitle:@"Game Over"
@@ -178,7 +209,6 @@
         [self.brain addHighScore:userScore:name];
     }
     
-    //make work
     [self performSegueWithIdentifier:@"segueToStartScreen" sender:self];
 }
 

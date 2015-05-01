@@ -62,8 +62,10 @@ CGFloat nameCellWidth = 0;
     
     if(tableView.tag == 0)
         cell.textLabel.text = [highScores objectAtIndex:indexPath.row];
+
     else if (tableView.tag == 1)
         cell.textLabel.text = [highScoresNames objectAtIndex:indexPath.row];
+
     
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
@@ -72,30 +74,5 @@ CGFloat nameCellWidth = 0;
     
     return cell;
 }
-
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)highScoresTable
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)highScoresTable
- numberOfRowsInSection:(NSInteger)section
-{
-    return [self.colors count];
-}
-
--(UITableViewCell *)tableView:(UITableView *)highScoresTable
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier =@"Cell";
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:IndexPath];
-    
-    cell.textLabel.text=[self.colors objectAtIndex:IndexPath.row]
-    
-    return cell;
-}
- */
 
 @end
